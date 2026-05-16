@@ -1,0 +1,56 @@
+.ad-unit {
+    text-align: center;
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #e6e8ea;
+    padding: 8px 16px 10px;
+}
+
+.ad-wrapper {
+    max-width: 970px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.ad-label {
+    font-size: 10px;
+    color: #8a8c8e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    text-align: right;
+    /* หรือ end ก็ได้: บังคับให้ชิดขวาของ Wrapper เสมอ */
+}
+
+
+/* --------------Mid-page ad---------------- */
+.ad-unit--mid {
+    border: none;
+    background: #ffffff;
+    padding: 20px 16px;
+}
+
+.ad-wrap--mid {
+    max-width: 302px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.ad-block {
+    background-color: #D2D4D6;
+    color: #8a8c8e;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* advertisement */
+.ad-label {
+    font-size: 10px;
+    color: #8a8c8e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    text-align: end;
+}

@@ -1,0 +1,204 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #141618;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/*********** layout เพื่อทำให้เท่ากัน ไม่แยก ***********/
+.page-wrap,
+.footer-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---- section Style ----*/
+.indiana-section,
+.iowa-section,
+.virginia-section,
+.texas-section {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px 16px 8px;
+}
+
+/* Section header: line + title */
+.section-header {
+    margin-bottom: 16px;
+}
+
+.section-line {
+    border: none;
+    border-top: 1px solid #e6e8ea;
+    margin-bottom: 10px;
+}
+
+.section-line--red {
+    border-top: 3px solid #EB0000;
+}
+
+.section-title-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #141618;
+    line-height: 1.2;
+}
+
+.section-see-more {
+    font-size: 14px;
+    color: #545658;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.section-see-more:hover {
+    text-decoration: underline;
+}
+
+
+/* ─── INDIANA grid (Weekend reads): 2 columns ── */
+.indiana-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* ─── IOWA grid (Audio): 4 columns ── */
+.iowa-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* ─── VIRGINIA grid (More news): 1 column list ── */
+.virginia-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ─── TEXAS grid (Editor's picks): 3 columns ── */
+.texas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+
+
+
+@media (max-width: 680px) {
+
+    .vermont-grid {
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+    }
+
+    .vermont-left,
+    .vermont-right {
+        border: none;
+        padding: 0;
+    }
+
+    .vermont-center {
+        order: 1;
+        padding: 16px 0;
+    }
+
+    .vermont-left {
+        order: 2;
+        padding: 16px 0;
+        border-top: 1px solid #e6e8ea;
+    }
+
+    .vermont-right {
+        order: 3;
+        border-top: 1px solid #e6e8ea;
+    }
+
+    .card-headline--featured {
+        font-size: 20px;
+    }
+
+    .iowa-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .texas-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .btn-register {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+
+    .bbc-logo span {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+    }
+
+    .indiana-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .iowa-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .texas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card--london {
+        grid-template-columns: 80px 1fr;
+    }
+}

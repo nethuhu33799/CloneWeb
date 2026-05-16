@@ -1,0 +1,92 @@
+/* FOOTER */
+.site-footer {
+    background-color: #ffff;
+    color: #141618;
+    margin-top: 48px;
+    padding: 28px 0 32px;
+}
+
+.footer-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-follow-label {
+    font-size: 13px;
+    color: #8a8c8e;
+}
+
+.social-links {
+    display: flex;
+    gap: 8px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #3a3c3e;
+    color: #D2D4D6;
+    font-size: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.social-btn:hover {
+    border-color: #D2D4D6;
+    color: #ffffff;
+}
+
+.bbc-logo--footer span {
+    background-color: #ffffff;
+    color: #000000;
+    width: 30px;
+    height: 30px;
+    font-size: 19px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px 16px;
+}
+
+.footer-links a {
+    font-size: 13px;
+    color: #D2D4D6;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+.footer-copy {
+    font-size: 11px;
+    color: #8a8c8e;
+    max-width: 560px;
+    line-height: 1.6;
+}
+
+.footer-copy a {
+    color: #8a8c8e;
+    text-decoration: underline;
+}
+
+.footer-copy a:hover {
+    color: #D2D4D6;
+}

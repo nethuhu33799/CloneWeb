@@ -1,0 +1,269 @@
+
+.page-main {
+    padding-top: 16px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   VERMONT — Hero 3-column section
+   data-testid="vermont-grid"
+   ═══════════════════════════════════════════════════════ */
+.vermont-section {
+    border-top: 1px solid #e6e8ea;
+}
+
+.vermont-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr 200px;
+    gap: 0;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 16px 0;
+}
+
+/* ── Left column ── */
+.vermont-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-right: 16px;
+    border-right: 1px solid #e6e8ea;
+}
+
+/* ── Center column ── */
+.vermont-center {
+    padding: 0 16px;
+}
+
+/* ── Right column ── */
+.vermont-right {
+    padding-left: 16px;
+    border-left: 1px solid #e6e8ea;
+}
+
+
+   /* CARD BASE — shared across all card types */
+
+.card {
+    cursor: pointer;
+}
+
+.card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ── Media (image wrapper) ── */
+.card-media img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+/* Square thumbnails for audio cards */
+.card-media--square img {
+    aspect-ratio: 1 / 1;
+}
+
+/* ── Headline ── */
+.card-headline {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #141618;
+    margin-bottom: 6px;
+}
+
+.card-headline--featured {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+/* ── Description ── */
+.card-description {
+    font-size: 13px;
+    color: #3a3c3e;
+    line-height: 1.45;
+    margin-bottom: 6px;
+}
+
+/* ── Meta (time | tag) ── */
+.card-meta {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.meta-time {
+    font-size: 12px;
+    color: #8a8c8e;
+}
+
+.meta-sep {
+    font-size: 12px;
+    color: #D2D4D6;
+}
+
+.meta-tag {
+    font-size: 12px;
+    font-weight: bold;
+    color: #545658;
+}
+
+/* Inline tag (above headline) */
+.meta-tag-inline {
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    color: #545658;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 5px;
+    margin-top: 8px;
+}
+
+/* ── Hover state ── */
+.card:hover .card-headline,
+.card-link:hover .card-headline {
+    text-decoration: underline;
+}
+
+
+/* ── WESTMINSTER card (left col small) ── */
+.card--westminster .card-text {
+    padding-top: 8px;
+}
+
+/* ── WESTMINSTER FEATURED (center) ── */
+.card--westminster-featured .card-text {
+    padding-top: 10px;
+}
+
+/* ── MANCHESTER card (right col, text only) ── */
+.card--manchester {
+    padding: 10px 0;
+}
+
+.card--manchester .card-headline {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.card--manchester .card-description {
+    font-size: 13px;
+}
+
+/* Divider between manchester cards */
+.card-rule {
+    border: none;
+    border-top: 1px solid #e6e8ea;
+    margin: 0;
+}
+
+/* ── LIVE badge ── */
+.live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    background-color: #EB0000;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 2px 6px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.live-dot {
+    font-size: 8px;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* ── EDINBURGH card (indiana / texas - image + headline) ── */
+.card--edinburgh .card-media img {
+    aspect-ratio: 16 / 9;
+}
+
+.card--edinburgh .card-text {
+    padding-top: 8px;
+}
+
+.card--edinburgh .card-headline {
+    font-size: 16px;
+}
+
+/* ── IPSWICH card (iowa - podcast/audio) ── */
+.card--ipswich .card-media--square img {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+}
+
+.card--ipswich .card-text {
+    padding-top: 8px;
+}
+
+.card--ipswich .card-headline {
+    font-size: 14px;
+}
+
+.card-content-type {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: #545658;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.content-icon {
+    flex-shrink: 0;
+}
+
+/* ── LONDON card (virginia - small image + text) ── */
+.card--london {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e6e8ea;
+}
+
+.card--london:last-child {
+    border-bottom: none;
+}
+
+.card--london .card-media img {
+    aspect-ratio: 16 / 10;
+    height: 100%;
+}
+
+.card--london .card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card--london .card-headline {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+}

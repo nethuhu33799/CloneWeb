@@ -1,0 +1,792 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #141618;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* layout ~760px center */
+.page-wrap,
+.header-wrap,
+.footer-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+
+/* ============== Advertisement section =============== */
+.ad-unit {
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #e6e8ea;
+    padding: 8px 16px 10px;
+    text-align: center;
+}
+
+.img-ad {
+    max-width: 970px;
+    max-height: 250px;
+}
+
+.ad-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* ชิดขวา */
+    width: 970px;
+    margin: 0 auto;
+}
+
+.ad-label {
+    display: flex;
+    justify-self: flex-end;
+    font-size: 10px;
+    color: #8a8c8e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+/* Mid-page ad */
+.ad-unit--mid {
+    border: none;
+    background: #ffffff;
+    padding: 20px 16px;
+}
+
+.ad-block {
+    width: 300px;
+    height: 250px;
+    background-color: #D2D4D6;
+    color: #8a8c8e;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* --------------- /Advertisement section --------------- */
+
+
+
+/* ============== Header section =============== */
+/* .section{
+    padding: 5px;
+
+} */
+
+.site-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid rgb(230, 232, 234);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* transition: height 0.5s; */
+    /* Note ทำให้เลื่อน transition w ท้ายๆ  */
+}
+
+.header-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: auto;
+}
+
+/* ── Icon buttons ── */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex: 1;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: #141618;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+}
+
+.icon-btn:hover {
+    background-color: rgb(230, 232, 234);
+}
+
+.header-center {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+    width: auto;
+}
+
+/* ── BBC Logo: 3 กล่องดำแยกกัน ── */
+.bbc-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    flex-shrink: 0;
+    flex: 1;
+    width: auto;
+
+}
+
+/* ── Auth buttons ── */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.btn-register {
+    border: 1px solid #141618;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #141618;
+    white-space: nowrap;
+}
+
+.btn-register:hover {
+    background-color: #141618;
+    color: #ffffff;
+}
+
+.btn-signin {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 6px 2px;
+    color: #141618;
+    white-space: nowrap;
+}
+
+.btn-signin:hover {
+    text-decoration: underline;
+}
+
+/*-------------------------- /Header section --------------------------*/
+
+
+
+/* ========================== Navigation ========================== */
+.primary-nav {
+    border-bottom: 1px solid #e6e8ea;
+    background-color: #ffffff;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.primary-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.nav-item a {
+    display: block;
+    padding: 12px 12px;
+    font-size: 15px;
+    color: #3a3c3e;
+    font-weight: normal;
+}
+
+.nav-item a:hover {
+    text-decoration: underline;
+}
+
+/* Active item: bold + 3px border bottom */
+.nav-item--active a {
+    font-weight: bold;
+    color: #141618;
+    border-bottom: 3px solid #141618;
+    padding-bottom: 9px;
+    /* compensate for 3px border */
+}
+/*-------------------------- /Navigation --------------------------*/
+
+
+
+
+
+
+/* ═══════════════════════════════════════════════════════
+   PAGE MAIN
+   ═══════════════════════════════════════════════════════ */
+.page-main {
+    padding-top: 16px;
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   VERMONT — Hero 3-column section
+   data-testid="vermont-grid"
+   ═══════════════════════════════════════════════════════ */
+.vermont-section {
+    border-top: 1px solid #e6e8ea;
+}
+
+.vermont-grid {
+    display: grid;
+    /*
+      LEFT:   220px  (westminster-card × 2)
+      CENTER: 1fr    (westminster featured)
+      RIGHT:  200px  (manchester text list)
+    */
+    grid-template-columns: 220px 1fr 200px;
+    gap: 0;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 16px 0;
+}
+
+/* ── Left column ── */
+.vermont-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-right: 16px;
+    border-right: 1px solid #e6e8ea;
+}
+
+/* ── Center column ── */
+.vermont-center {
+    padding: 0 16px;
+}
+
+/* ── Right column ── */
+.vermont-right {
+    padding-left: 16px;
+    border-left: 1px solid #e6e8ea;
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   CARD BASE — shared across all card types
+   ═══════════════════════════════════════════════════════ */
+.card {
+    cursor: pointer;
+}
+
+.card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ── Media (image wrapper) ── */
+.card-media img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+/* Square thumbnails for audio cards */
+.card-media--square img {
+    aspect-ratio: 1 / 1;
+}
+
+/* ── Headline ── */
+.card-headline {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #141618;
+    margin-bottom: 6px;
+}
+
+.card-headline--featured {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+/* ── Description ── */
+.card-description {
+    font-size: 13px;
+    color: #3a3c3e;
+    line-height: 1.45;
+    margin-bottom: 6px;
+}
+
+/* ── Meta (time | tag) ── */
+.card-meta {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.meta-time {
+    font-size: 12px;
+    color: #8a8c8e;
+}
+
+.meta-sep {
+    font-size: 12px;
+    color: #D2D4D6;
+}
+
+.meta-tag {
+    font-size: 12px;
+    font-weight: bold;
+    color: #545658;
+}
+
+/* Inline tag (above headline) */
+.meta-tag-inline {
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    color: #545658;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 5px;
+    margin-top: 8px;
+}
+
+/* ── Hover state ── */
+.card:hover .card-headline,
+.card-link:hover .card-headline {
+    text-decoration: underline;
+}
+
+
+/* ── WESTMINSTER card (left col small) ── */
+.card--westminster .card-text {
+    padding-top: 8px;
+}
+
+/* ── WESTMINSTER FEATURED (center) ── */
+.card--westminster-featured .card-text {
+    padding-top: 10px;
+}
+
+/* ── MANCHESTER card (right col, text only) ── */
+.card--manchester {
+    padding: 10px 0;
+}
+
+.card--manchester .card-headline {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.card--manchester .card-description {
+    font-size: 13px;
+}
+
+/* Divider between manchester cards */
+.card-rule {
+    border: none;
+    border-top: 1px solid #e6e8ea;
+    margin: 0;
+}
+
+/* ── LIVE badge ── */
+.live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    background-color: #EB0000;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 2px 6px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.live-dot {
+    font-size: 8px;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* ── EDINBURGH card (indiana / texas - image + headline) ── */
+.card--edinburgh .card-media img {
+    aspect-ratio: 16 / 9;
+}
+
+.card--edinburgh .card-text {
+    padding-top: 8px;
+}
+
+.card--edinburgh .card-headline {
+    font-size: 16px;
+}
+
+/* ── IPSWICH card (iowa - podcast/audio) ── */
+.card--ipswich .card-media--square img {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+}
+
+.card--ipswich .card-text {
+    padding-top: 8px;
+}
+
+.card--ipswich .card-headline {
+    font-size: 14px;
+}
+
+.card-content-type {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: #545658;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.content-icon {
+    flex-shrink: 0;
+}
+
+/* ── LONDON card (virginia - small image + text) ── */
+.card--london {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e6e8ea;
+}
+
+.card--london:last-child {
+    border-bottom: none;
+}
+
+.card--london .card-media img {
+    aspect-ratio: 16 / 10;
+    height: 100%;
+}
+
+.card--london .card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card--london .card-headline {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   SECTION SHARED STYLES
+   ═══════════════════════════════════════════════════════ */
+.indiana-section,
+.iowa-section,
+.virginia-section,
+.texas-section {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px 16px 8px;
+}
+
+/* Section header: line + title */
+.section-header {
+    margin-bottom: 16px;
+}
+
+.section-line {
+    border: none;
+    border-top: 1px solid #e6e8ea;
+    margin-bottom: 10px;
+}
+
+.section-line--red {
+    border-top: 3px solid #EB0000;
+}
+
+.section-title-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #141618;
+    line-height: 1.2;
+}
+
+.section-see-more {
+    font-size: 14px;
+    color: #545658;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.section-see-more:hover {
+    text-decoration: underline;
+}
+
+
+/* ─── INDIANA grid (Weekend reads): 2 columns ── */
+.indiana-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* ─── IOWA grid (Audio): 4 columns ── */
+.iowa-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* ─── VIRGINIA grid (More news): 1 column list ── */
+.virginia-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ─── TEXAS grid (Editor's picks): 3 columns ── */
+.texas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════ */
+.site-footer {
+    background-color: #141618;
+    color: #D2D4D6;
+    margin-top: 48px;
+    padding: 28px 0 32px;
+}
+
+.footer-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+/* Social row */
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-follow-label {
+    font-size: 13px;
+    color: #8a8c8e;
+}
+
+.social-links {
+    display: flex;
+    gap: 8px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #3a3c3e;
+    color: #D2D4D6;
+    font-size: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.social-btn:hover {
+    border-color: #D2D4D6;
+    color: #ffffff;
+}
+
+/* BBC Logo footer: white boxes */
+.bbc-logo--footer span {
+    background-color: #ffffff;
+    color: #000000;
+    width: 30px;
+    height: 30px;
+    font-size: 19px;
+}
+
+/* Footer nav links */
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px 16px;
+}
+
+.footer-links a {
+    font-size: 13px;
+    color: #D2D4D6;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Copyright */
+.footer-copy {
+    font-size: 11px;
+    color: #8a8c8e;
+    max-width: 560px;
+    line-height: 1.6;
+}
+
+.footer-copy a {
+    color: #8a8c8e;
+    text-decoration: underline;
+}
+
+.footer-copy a:hover {
+    color: #D2D4D6;
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════ */
+
+/* Tablet: 680px — collapse vermont to single column */
+@media (max-width: 680px) {
+
+    .vermont-grid {
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+    }
+
+    .vermont-left,
+    .vermont-right {
+        border: none;
+        padding: 0;
+    }
+
+    /* Order: center (hero) first, then left, then right */
+    .vermont-center {
+        order: 1;
+        padding: 16px 0;
+    }
+
+    .vermont-left {
+        order: 2;
+        padding: 16px 0;
+        border-top: 1px solid #e6e8ea;
+    }
+
+    .vermont-right {
+        order: 3;
+        border-top: 1px solid #e6e8ea;
+    }
+
+    .card-headline--featured {
+        font-size: 20px;
+    }
+
+    /* Iowa: 2 col on tablet */
+    .iowa-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Texas: 2 col */
+    .texas-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Mobile: 480px */
+@media (max-width: 480px) {
+
+    .btn-register {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+
+    .bbc-logo span {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+    }
+
+    /* Indiana: 1 col */
+    .indiana-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Iowa: 1 col */
+    .iowa-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Texas: 1 col */
+    .texas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* London card: stack vertically */
+    .card--london {
+        grid-template-columns: 80px 1fr;
+    }
+}
