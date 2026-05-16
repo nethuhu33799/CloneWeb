@@ -26,13 +26,11 @@ img {
     height: auto;
 }
 
-/* layout ~760px center */
+/***************** config all layout Wrap 760px center *************************/
 .page-wrap,
 .header-wrap,
 .footer-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 0 16px;
+    margin: 16px auto;
 }
 
 
@@ -44,7 +42,7 @@ img {
     text-align: center;
 }
 
-.img-ad {
+.img-ad--top {
     max-width: 970px;
     max-height: 250px;
 }
@@ -186,7 +184,7 @@ img {
 .btn-signin {
     font-size: 14px;
     font-weight: bold;
-    padding: 6px 2px;
+    padding: 6px 20px 2px 6px;
     color: #141618;
     white-space: nowrap;
 }
@@ -201,31 +199,26 @@ img {
 
 /* ========================== Navigation ========================== */
 .primary-nav {
+    display: flex;
+    align-self: center;
     border-bottom: 1px solid #e6e8ea;
     background-color: #ffffff;
-    scrollbar-width: none;
-    /* Firefox */
-}
-
-.primary-nav::-webkit-scrollbar {
-    display: none;
 }
 
 .nav-list {
     display: flex;
-    align-items: center;
-    white-space: nowrap;
-    max-width: 760px;
+    align-self: center;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0;
 }
 
 .nav-item a {
     display: block;
-    padding: 12px 12px;
-    font-size: 15px;
+    padding: 12px 8px;
+    font-size: 14px;
     color: #3a3c3e;
-    font-weight: normal;
+    font-weight: bold;
+    font-family: "BBC Reith Sans", BBCReithSans-fallback, sans-serif;
 }
 
 .nav-item a:hover {
@@ -234,12 +227,12 @@ img {
 
 /* Active item: bold + 3px border bottom */
 .nav-item--active a {
-    font-weight: bold;
     color: #141618;
     border-bottom: 3px solid #141618;
     padding-bottom: 9px;
     /* compensate for 3px border */
 }
+
 /*-------------------------- /Navigation --------------------------*/
 
 
@@ -247,38 +240,31 @@ img {
 
 
 
-/* ═══════════════════════════════════════════════════════
-   PAGE MAIN
-   ═══════════════════════════════════════════════════════ */
-.page-main {
-    padding-top: 16px;
+/* ========================== section Main ==============================*/
+
+/* ========================== first-segment ==============================*/
+.page-wrap-first{
+    padding: 24px 0px 0px 28px;
 }
-
-
-/* ═══════════════════════════════════════════════════════
-   VERMONT — Hero 3-column section
-   data-testid="vermont-grid"
-   ═══════════════════════════════════════════════════════ */
-.vermont-section {
+.first-segment {
+    display: grid;
+    justify-content: center;
     border-top: 1px solid #e6e8ea;
 }
 
-.vermont-grid {
+.first-segment-grid {
     display: grid;
-    /*
-      LEFT:   220px  (westminster-card × 2)
-      CENTER: 1fr    (westminster featured)
-      RIGHT:  200px  (manchester text list)
-    */
     grid-template-columns: 220px 1fr 200px;
-    gap: 0;
+    justify-items: center;
+    border-top: 1px solid #e6e8ea;
+    /*760 / 3 แบ่ง ข่าวย่อย เด่น text*/
+    /* gap: 0; */
     max-width: 760px;
-    margin: 0 auto;
-    padding: 16px 16px 0;
+    padding: 0px 24px 28px 0px;
 }
 
 /* ── Left column ── */
-.vermont-left {
+.first-segment-left {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -287,20 +273,25 @@ img {
 }
 
 /* ── Center column ── */
-.vermont-center {
+.first-segment-center {
     padding: 0 16px;
 }
 
 /* ── Right column ── */
-.vermont-right {
+.first-segment-right {
     padding-left: 16px;
     border-left: 1px solid #e6e8ea;
 }
 
+/*-------------------------- /first-segment --------------------------*/
 
-/* ═══════════════════════════════════════════════════════
-   CARD BASE — shared across all card types
-   ═══════════════════════════════════════════════════════ */
+
+
+
+
+
+/* ========================== Base on Card shared  all card types ========================== */
+
 .card {
     cursor: pointer;
 }
@@ -311,16 +302,17 @@ img {
     text-decoration: none;
 }
 
-/* ── Media (image wrapper) ── */
+/* ปรับภาพให้พอดีขอบ Square cards <<<<<==================================== !!!!!!*/
 .card-media img {
     width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-}
+    height: 180px;
+    overflow: hidden;
 
-/* Square thumbnails for audio cards */
+}
+/* Square cards */
 .card-media--square img {
-    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
 }
 
 /* ── Headline ── */
@@ -527,16 +519,18 @@ img {
 }
 
 
-/* ═══════════════════════════════════════════════════════
-   SECTION SHARED STYLES
-   ═══════════════════════════════════════════════════════ */
+/*========================================== under ad 1==========================*/
+.page-wrap--2{
+    margin: 48px auto;
+}
 .indiana-section,
 .iowa-section,
-.virginia-section,
+.virginia-section, /*last section font ad*/
 .texas-section {
     max-width: 760px;
     margin: 0 auto;
     padding: 24px 16px 8px;
+    /* margin: 16px auto; */
 }
 
 /* Section header: line + title */
