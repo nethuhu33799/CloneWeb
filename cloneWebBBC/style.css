@@ -267,7 +267,6 @@ img {
     padding: 0px 24px 28px 0px;
 }
 
-/* ── Left column ── */
 .first-segment-left {
     display: flex;
     flex-direction: column;
@@ -276,12 +275,10 @@ img {
     border-right: 1px solid #e6e8ea;
 }
 
-/* ── Center column ── */
 .first-segment-center {
     padding: 0 16px;
 }
 
-/* ── Right column ── */
 .first-segment-right {
     padding-left: 16px;
     border-left: 1px solid #e6e8ea;
@@ -329,13 +326,11 @@ img {
     min-height: 160px;
 }
 
-/* Square cards */
 .card-media--square img {
     width: 100%;
     height: auto;
 }
 
-/* ── Headline ── */
 .card-headline {
     font-size: 15px;
     font-weight: 700;
@@ -351,7 +346,6 @@ img {
     margin-bottom: 12px;
 }
 
-/* ── Description ── */
 .card-description {
     font-size: 13px;
     color: #3a3c3e;
@@ -359,7 +353,6 @@ img {
     margin-bottom: 8px;
 }
 
-/* ── Meta (time | tag) ── */
 .card-meta {
     display: flex;
     align-items: center;
@@ -367,7 +360,6 @@ img {
     margin-top: 8px;
 }
 
-/* Date time */
 .meta-time {
     font-size: 12px;
     color: #8a8c8e;
@@ -384,7 +376,6 @@ img {
     color: #545658;
 }
 
-/* Inline tag (above headline) */
 .meta-tag-inline {
     display: block;
     font-size: 11px;
@@ -396,24 +387,15 @@ img {
     margin-top: 8px;
 }
 
-/* ── Hover state ── */
 .card:hover .card-headline,
 .card-link:hover .card-headline {
     text-decoration: underline;
 }
 
-
-/* ── WESTMINSTER card (left col small) ── */
-.card--westminster .card-text {
-    /* padding inherited from .card-text */
-}
-
-/* ── WESTMINSTER FEATURED (center) ── */
 .card-main--A .card-text {
     padding: 12px 0;
 }
 
-/* ── MANCHESTER card (right col, text only) ── */
 .card-second {
     padding: 12px 0;
 }
@@ -465,31 +447,20 @@ img {
     margin-bottom: 8px;
 }
 
-
-
-
-/* 1. ตั้งค่ากล่องอุ้มภาพ (กล่องแม่) ให้กางเป็นสี่เหลี่ยมจัตุรัสเปล่าๆ รอไว้ก่อน */
 .card--section3 .card-media--square {
     width: 100%;
     height: 0;
-    /* ล้างความสูงปกติออกไป */
     padding-bottom: 100%;
-    /* [หัวใจหลัก] สร้างความสูงจาก 100% ของความกว้าง กลายเป็นสี่เหลี่ยมจัตุรัส */
     position: relative;
-    /* ปักหมุดไว้เพื่อให้กล่องลูกอ้างอิงตำแหน่ง */
     overflow: hidden;
 }
 
-/* 2. สั่งให้รูปภาพ (กล่องลูก) เข้าไปสวมทับพื้นที่จัตุรัสทั้งหมด */
 .card--section3 .card-media--square img {
     position: absolute;
-    /* ดึงภาพออกจากเลย์เอาต์ปกติ เพื่อไม่ให้มันไปดัน Padding */
     top: 0;
     left: 0;
     width: 100%;
-    /* กางกว้างเต็มกล่องแม่ */
     height: 100%;
-    /* กางสูงเต็มกล่องแม่ */
 }
 
 
@@ -581,7 +552,6 @@ img {
     /* margin: 16px auto; */
 }
 
-/* Section header: line + title */
 .section-header {
     margin-bottom: 16px;
 }
@@ -620,28 +590,23 @@ img {
     text-decoration: underline;
 }
 
-
-/* ─── INDIANA grid (Weekend reads): 2 columns ── */
 .section-2--A {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
 
-/* ─── IOWA grid (Audio): 4 columns iowa-grid ── */
 .section-3--A {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
 }
 
-/* ─── VIRGINIA grid (More news): 1 column list ── */
 .virginia-grid {
     display: flex;
     flex-direction: column;
 }
 
-/* ─── TEXAS grid (Editor's picks): 3 columns ── */
 .texas-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -649,9 +614,7 @@ img {
 }
 
 
-/* ═══════════════════════════════════════════════════════
-   FOOTER
-   ═══════════════════════════════════════════════════════ */
+/* Footerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr */
 .site-footer {
     background-color: #ffffff;
     color: #D2D4D6;
@@ -667,7 +630,6 @@ img {
     text-align: center;
 }
 
-/* Social row */
 .footer-social {
     display: flex;
     flex-direction: column;
@@ -703,7 +665,6 @@ img {
     color: #ffffff;
 }
 
-/* BBC Logo footer: white boxes */
 .bbc-logo--footer span {
     background-color: #ffffff;
     color: #000000;
@@ -712,7 +673,6 @@ img {
     font-size: 19px;
 }
 
-/* Footer nav links */
 .footer-links {
     display: flex;
     flex-wrap: wrap;
@@ -730,7 +690,6 @@ img {
     text-decoration: underline;
 }
 
-/* Copyright */
 .footer-copy {
     font-size: 11px;
     color: #8a8c8e;
@@ -780,28 +739,22 @@ img {
         max-width: 100%;
     }
 
-    /* [FIX] รูป Ad: บังคับให้ตามความกว้าง wrapper */
     .img-ad--top {
         width: 100%;
         height: auto;
         max-width: 100%;
     }
 
-    /* [FIX] first-segment: ให้เต็มความกว้างจอ */
     .first-segment {
         width: 100%;
     }
 
-    /* [FIX] Reset margin: 15px ที่ base CSS กำหนดไว้
-       ตัวการทำให้คอลัมน์คำนวณขนาดผิดพลาด */
     .first-segment-left,
     .main-segment-center,
     .second-segment--left {
         margin: 0;
     }
 
-    /* Grid หลัก: 3 col → 2 col
-       [FIX] padding สมมาตร + เปลี่ยน 220px fixed → 30% fluid */
     .first-segment-grid {
         grid-template-columns: 30% 1fr;
         width: 100%;
@@ -810,7 +763,6 @@ img {
         margin: 0 auto;
     }
 
-    /* คอลัมน์ขวา (text-only): ลงมาเต็มแถว แบ่งเป็น 2 col */
     .second-segment--left {
         grid-column: 1 / -1;
         display: grid;
@@ -822,12 +774,10 @@ img {
         margin: 0;
     }
 
-    /* เส้นคั่น hr ระหว่างการ์ดขวา ยืดเต็มแถว */
     .second-segment--left .card-rule {
         grid-column: 1 / -1;
     }
 
-    /* Nav: scroll แนวนอน + ซ่อน scrollbar */
     .primary-nav {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -838,12 +788,10 @@ img {
         display: none;
     }
 
-    /* Iowa (Audio): 2 col */
     .section-3--A {
         grid-template-columns: 1fr 1fr;
     }
 
-    /* Texas (Editor's picks): 2 col */
     .texas-grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -852,7 +800,6 @@ img {
 
 @media screen and (max-width: 768px) {
 
-    /* Header: กระชับ */
     .header-wrap {
         padding: 0 12px;
     }
@@ -862,12 +809,10 @@ img {
         font-size: 13px;
     }
 
-    /* ซ่อน Sign In เพื่อประหยัดพื้นที่ */
     .btn-signin {
         display: none;
     }
 
-    /* Nav: scroll แนวนอน + ซ่อน scrollbar */
     .primary-nav {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -883,7 +828,6 @@ img {
         white-space: nowrap;
     }
 
-    /* Ad: เต็มความกว้าง */
     .ad-wrapper {
         width: 100%;
     }
@@ -892,7 +836,6 @@ img {
         min-height: unset;
     }
 
-    /* Grid หลัก: 1 คอลัมน์ */
     .first-segment-grid {
         grid-template-columns: 1fr;
         max-width: 100%;
@@ -912,7 +855,6 @@ img {
         order: 3;
     }
 
-    /* Reset margin ของทุก grid child */
     .first-segment-left,
     .main-segment-center,
     .second-segment--left {
@@ -920,7 +862,6 @@ img {
         padding: 16px;
     }
 
-    /* ซ้าย: เอาเส้นขวาออก ใส่เส้นล่างแทน */
     .first-segment-left {
         border-right: none;
         border-top: 1px solid #e6e8ea;
@@ -929,13 +870,11 @@ img {
         gap: 20px;
     }
 
-    /* กลาง (Hero): เส้นล่าง */
     .first-segment-center {
         padding: 16px;
         border-bottom: none;
     }
 
-    /* ขวา (text-only): กลับเป็น flex column ปกติ */
     .second-segment--left {
         display: flex;
         flex-direction: column;
@@ -945,7 +884,6 @@ img {
         padding: 8px 16px;
     }
 
-    /* ภาพในการ์ด: ความสูง auto + container ปรับขนาด */
     .card-media {
         height: auto;
         overflow: visible;
@@ -957,32 +895,26 @@ img {
         position: static;
     }
 
-    /* Hero headline: ขนาดพอดีมือถือ */
     .card-headline--featured {
         font-size: 20px;
     }
 
-    /* Indiana (Weekend reads): 1 col */
     .section-2--A {
         grid-template-columns: 1fr;
     }
 
-    /* Iowa (Audio): ยังคง 2 col พอดีจอ */
     .section-3--A {
         grid-template-columns: 1fr 1fr;
     }
 
-    /* Texas (Editor's picks): 1 col */
     .texas-grid {
         grid-template-columns: 1fr;
     }
 
-    /* More news card: รูปเล็ก + ข้อความ */
     .card--london {
         grid-template-columns: 90px 1fr;
     }
 
-    /* Section ต่างๆ: padding พอดีขอบจอ */
     .new-section--1,
     .new-section--2,
     .new-section--3,
@@ -991,7 +923,6 @@ img {
         padding: 16px 16px 8px;
     }
 
-    /* Footer: ปรับ gap */
     .footer-links {
         gap: 8px 12px;
     }
