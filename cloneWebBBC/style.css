@@ -22,8 +22,8 @@ ul {
 
 img {
     display: block;
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
 }
 
 /***************** config all layout Wrap 760px center *************************/
@@ -306,18 +306,27 @@ img {
     text-decoration: none;
 }
 
+/* ── Card text wrapper ── */
+.card-text {
+    padding: 8px 0;
+}
+
 /* ปรับภาพให้พอดีขอบ Square cards <<<<<==================================== !!!!!!*/
 
 .card-media {
     width: 100%;
-    height: 180px;
+    min-height: 110px;
     overflow: hidden;
 }
 
 .card-media img {
     width: 100%;
-    height: 180px;
+    height: auto;
     overflow: hidden;
+}
+
+.card-main--A .card-media {
+    min-height: 160px;
 }
 
 /* Square cards */
@@ -330,23 +339,24 @@ img {
 .card-headline {
     font-size: 15px;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.4;
     color: #141618;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .card-headline--featured {
     font-size: 22px;
     font-weight: 800;
-    line-height: 1.2;
+    line-height: 1.3;
+    margin-bottom: 12px;
 }
 
 /* ── Description ── */
 .card-description {
     font-size: 13px;
     color: #3a3c3e;
-    line-height: 1.45;
-    margin-bottom: 6px;
+    line-height: 1.5;
+    margin-bottom: 8px;
 }
 
 /* ── Meta (time | tag) ── */
@@ -354,7 +364,7 @@ img {
     display: flex;
     align-items: center;
     gap: 5px;
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 /* Date time */
@@ -395,23 +405,24 @@ img {
 
 /* ── WESTMINSTER card (left col small) ── */
 .card--westminster .card-text {
-    padding-top: 8px;
+    /* padding inherited from .card-text */
 }
 
 /* ── WESTMINSTER FEATURED (center) ── */
-.card-main .card-text {
-    padding-top: 10px;
+.card-main--A .card-text {
+    padding: 12px 0;
 }
 
 /* ── MANCHESTER card (right col, text only) ── */
 .card-second {
-    padding: 10px 0;
+    padding: 12px 0;
 }
 
 .card-second .card-headline {
     font-size: 14px;
     font-weight: 700;
-    line-height: 1.35;
+    line-height: 1.4;
+    margin-bottom: 6px;
 }
 
 .card-second--A .card-description {
@@ -445,11 +456,13 @@ img {
 }
 
 .card--section2 .card-text {
-    padding-top: 8px;
+    padding: 10px 0;
 }
 
 .card--section2 .card-headline {
     font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 8px;
 }
 
 
@@ -484,11 +497,13 @@ img {
 
 
 .card--section3 .card-text {
-    padding-top: 8px;
+    padding: 8px 0;
 }
 
 .card--section3 .card-headline {
     font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 6px;
 }
 
 .card-content-type {
@@ -520,6 +535,10 @@ img {
     border-bottom: none;
 }
 
+.card--london .card-media {
+    min-height: auto;
+}
+
 .card--london .card-media img {
     aspect-ratio: 16 / 10;
     height: 100%;
@@ -529,12 +548,14 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 0;
 }
 
 .card--london .card-headline {
     font-size: 14px;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.4;
+    margin-bottom: 4px;
 }
 
 
@@ -727,7 +748,7 @@ img {
 }
 
 
-@media screen and (max-width: 1008px) {
+@media screen and (max-width: 1024px) {
 
     body {
         overflow-x: hidden;
@@ -739,6 +760,11 @@ img {
 
     .card-media {
         position: relative;
+        min-height: 150px;
+    }
+
+    .main-segment-center {
+        padding: 0 0 0 16px;
     }
 
     .card-media img {
@@ -747,6 +773,7 @@ img {
         left: 0;
         overflow: hidden;
     }
+
     /* ไม่เอา wrapper ห่อ เหมือนอน */
     .ad-wrapper {
         width: 100% !important;
@@ -823,7 +850,7 @@ img {
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
 
     /* Header: กระชับ */
     .header-wrap {
@@ -861,6 +888,10 @@ img {
         width: 100%;
     }
 
+    .card-main--A .card-media {
+        min-height: unset;
+    }
+
     /* Grid หลัก: 1 คอลัมน์ */
     .first-segment-grid {
         grid-template-columns: 1fr;
@@ -869,7 +900,6 @@ img {
         margin: 0;
     }
 
-    /* จัดลำดับใหม่: Hero ขึ้นก่อน เหมือนเว็บจริง */
     .first-segment-left {
         order: 2;
     }
@@ -915,9 +945,16 @@ img {
         padding: 8px 16px;
     }
 
-    /* ภาพในการ์ด: ความสูง auto บนมือถือ */
+    /* ภาพในการ์ด: ความสูง auto + container ปรับขนาด */
+    .card-media {
+        height: auto;
+        overflow: visible;
+    }
+
     .card-media img {
         height: auto;
+        width: 100%;
+        position: static;
     }
 
     /* Hero headline: ขนาดพอดีมือถือ */
