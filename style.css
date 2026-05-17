@@ -51,8 +51,9 @@ img {
 
 
 /* ---- section Style ----*/
-.indiana-section,
-.iowa-section,
+.new-section--1,
+.new-section--2,
+.new-section--3,
 .virginia-section,
 .texas-section {
     max-width: 760px;

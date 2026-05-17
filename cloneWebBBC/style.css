@@ -47,23 +47,25 @@ img {
     max-height: 250px;
 }
 
+.img-ad--mid {
+    max-width: 250px;
+    max-height: 300px;
+}
+
 .ad-wrapper {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    /* ชิดขวา */
     width: 970px;
     margin: 0 auto;
 }
 
-.ad-label {
+.ad-wrapper--mid {
     display: flex;
-    justify-self: flex-end;
-    font-size: 10px;
-    color: #8a8c8e;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 250px;
+    margin: 0 auto;
 }
 
 /* Mid-page ad */
@@ -83,6 +85,12 @@ img {
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+}
+
+.first-segment-left,
+.main-segment-center,
+.second-segment--left {
+    margin: 15px;
 }
 
 /* --------------- /Advertisement section --------------- */
@@ -210,6 +218,8 @@ img {
     align-self: center;
     margin: 0 auto;
     padding: 0;
+    max-width: 760px;
+    width: 100%;
 }
 
 .nav-item a {
@@ -235,17 +245,12 @@ img {
 
 /*-------------------------- /Navigation --------------------------*/
 
-
-
-
-
-
 /* ========================== section Main ==============================*/
-
 /* ========================== first-segment ==============================*/
-.page-wrap-first{
+.page-wrap-first {
     padding: 24px 0px 0px 28px;
 }
+
 .first-segment {
     display: grid;
     justify-content: center;
@@ -255,10 +260,9 @@ img {
 .first-segment-grid {
     display: grid;
     grid-template-columns: 220px 1fr 200px;
+    /*760 / 3 แบ่ง ข่าวย่อย เด่น text  gap: 0; */
     justify-items: center;
     border-top: 1px solid #e6e8ea;
-    /*760 / 3 แบ่ง ข่าวย่อย เด่น text*/
-    /* gap: 0; */
     max-width: 760px;
     padding: 0px 24px 28px 0px;
 }
@@ -303,12 +307,19 @@ img {
 }
 
 /* ปรับภาพให้พอดีขอบ Square cards <<<<<==================================== !!!!!!*/
+
+.card-media {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
 .card-media img {
     width: 100%;
     height: 180px;
     overflow: hidden;
-
 }
+
 /* Square cards */
 .card-media--square img {
     width: 100%;
@@ -346,6 +357,7 @@ img {
     margin-top: 5px;
 }
 
+/* Date time */
 .meta-time {
     font-size: 12px;
     color: #8a8c8e;
@@ -387,30 +399,23 @@ img {
 }
 
 /* ── WESTMINSTER FEATURED (center) ── */
-.card--westminster-featured .card-text {
+.card-main .card-text {
     padding-top: 10px;
 }
 
 /* ── MANCHESTER card (right col, text only) ── */
-.card--manchester {
+.card-second {
     padding: 10px 0;
 }
 
-.card--manchester .card-headline {
+.card-second .card-headline {
     font-size: 14px;
     font-weight: 700;
     line-height: 1.35;
 }
 
-.card--manchester .card-description {
+.card-second--A .card-description {
     font-size: 13px;
-}
-
-/* Divider between manchester cards */
-.card-rule {
-    border: none;
-    border-top: 1px solid #e6e8ea;
-    margin: 0;
 }
 
 /* ── LIVE badge ── */
@@ -425,50 +430,64 @@ img {
     letter-spacing: 0.5px;
     padding: 2px 6px;
     margin-right: 4px;
-    vertical-align: middle;
-}
-
-.live-dot {
-    font-size: 8px;
-    animation: blink 1.5s infinite;
-}
-
-@keyframes blink {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.3;
-    }
 }
 
 /* ── EDINBURGH card (indiana / texas - image + headline) ── */
-.card--edinburgh .card-media img {
-    aspect-ratio: 16 / 9;
+.card--section2 .card-media {
+    width: 100%;
+    overflow: hidden;
 }
 
-.card--edinburgh .card-text {
+.card--section2 .card-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.card--section2 .card-text {
     padding-top: 8px;
 }
 
-.card--edinburgh .card-headline {
+.card--section2 .card-headline {
     font-size: 16px;
 }
 
-/* ── IPSWICH card (iowa - podcast/audio) ── */
-.card--ipswich .card-media--square img {
-    aspect-ratio: 1 / 1;
+
+
+
+/* 1. ตั้งค่ากล่องอุ้มภาพ (กล่องแม่) ให้กางเป็นสี่เหลี่ยมจัตุรัสเปล่าๆ รอไว้ก่อน */
+.card--section3 .card-media--square {
     width: 100%;
+    height: 0;
+    /* ล้างความสูงปกติออกไป */
+    padding-bottom: 100%;
+    /* [หัวใจหลัก] สร้างความสูงจาก 100% ของความกว้าง กลายเป็นสี่เหลี่ยมจัตุรัส */
+    position: relative;
+    /* ปักหมุดไว้เพื่อให้กล่องลูกอ้างอิงตำแหน่ง */
+    overflow: hidden;
 }
 
-.card--ipswich .card-text {
+/* 2. สั่งให้รูปภาพ (กล่องลูก) เข้าไปสวมทับพื้นที่จัตุรัสทั้งหมด */
+.card--section3 .card-media--square img {
+    position: absolute;
+    /* ดึงภาพออกจากเลย์เอาต์ปกติ เพื่อไม่ให้มันไปดัน Padding */
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* กางกว้างเต็มกล่องแม่ */
+    height: 100%;
+    /* กางสูงเต็มกล่องแม่ */
+}
+
+
+
+
+
+.card--section3 .card-text {
     padding-top: 8px;
 }
 
-.card--ipswich .card-headline {
+.card--section3 .card-headline {
     font-size: 14px;
 }
 
@@ -520,13 +539,21 @@ img {
 
 
 /*========================================== under ad 1==========================*/
-.page-wrap--2{
+.page-wrap--2 {
     margin: 48px auto;
 }
-.indiana-section,
-.iowa-section,
-.virginia-section, /*last section font ad*/
-.texas-section {
+
+.page-wrap--More {
+    margin: 24px auto;
+}
+
+
+
+.new-section--1,
+.new-section--2,
+.new-section--3,
+.new-section--last,
+.new-section--final {
     max-width: 760px;
     margin: 0 auto;
     padding: 24px 16px 8px;
@@ -574,14 +601,14 @@ img {
 
 
 /* ─── INDIANA grid (Weekend reads): 2 columns ── */
-.indiana-grid {
+.section-2--A {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
 
-/* ─── IOWA grid (Audio): 4 columns ── */
-.iowa-grid {
+/* ─── IOWA grid (Audio): 4 columns iowa-grid ── */
+.section-3--A {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
@@ -605,7 +632,7 @@ img {
    FOOTER
    ═══════════════════════════════════════════════════════ */
 .site-footer {
-    background-color: #141618;
+    background-color: #ffffff;
     color: #D2D4D6;
     margin-top: 48px;
     padding: 28px 0 32px;
@@ -700,87 +727,235 @@ img {
 }
 
 
-/* ═══════════════════════════════════════════════════════
-   RESPONSIVE
-   ═══════════════════════════════════════════════════════ */
+@media screen and (max-width: 1008px) {
 
-/* Tablet: 680px — collapse vermont to single column */
-@media (max-width: 680px) {
-
-    .vermont-grid {
-        grid-template-columns: 1fr;
-        padding: 0 16px;
+    body {
+        overflow-x: hidden;
     }
 
-    .vermont-left,
-    .vermont-right {
-        border: none;
-        padding: 0;
+    .nav-list {
+        display: none;
     }
 
-    /* Order: center (hero) first, then left, then right */
-    .vermont-center {
-        order: 1;
-        padding: 16px 0;
+    .card-media {
+        position: relative;
     }
 
-    .vermont-left {
-        order: 2;
-        padding: 16px 0;
+    .card-media img {
+        height: auto;
+        position: absolute;
+        left: 0;
+        overflow: hidden;
+    }
+    /* ไม่เอา wrapper ห่อ เหมือนอน */
+    .ad-wrapper {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    /* [FIX] รูป Ad: บังคับให้ตามความกว้าง wrapper */
+    .img-ad--top {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    /* [FIX] first-segment: ให้เต็มความกว้างจอ */
+    .first-segment {
+        width: 100%;
+    }
+
+    /* [FIX] Reset margin: 15px ที่ base CSS กำหนดไว้
+       ตัวการทำให้คอลัมน์คำนวณขนาดผิดพลาด */
+    .first-segment-left,
+    .main-segment-center,
+    .second-segment--left {
+        margin: 0;
+    }
+
+    /* Grid หลัก: 3 col → 2 col
+       [FIX] padding สมมาตร + เปลี่ยน 220px fixed → 30% fluid */
+    .first-segment-grid {
+        grid-template-columns: 30% 1fr;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 16px 16px 16px;
+        margin: 0 auto;
+    }
+
+    /* คอลัมน์ขวา (text-only): ลงมาเต็มแถว แบ่งเป็น 2 col */
+    .second-segment--left {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 24px;
+        border-left: none;
         border-top: 1px solid #e6e8ea;
+        padding: 16px 0 0 0;
+        margin: 0;
     }
 
-    .vermont-right {
-        order: 3;
-        border-top: 1px solid #e6e8ea;
+    /* เส้นคั่น hr ระหว่างการ์ดขวา ยืดเต็มแถว */
+    .second-segment--left .card-rule {
+        grid-column: 1 / -1;
     }
 
-    .card-headline--featured {
-        font-size: 20px;
+    /* Nav: scroll แนวนอน + ซ่อน scrollbar */
+    .primary-nav {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
     }
 
-    /* Iowa: 2 col on tablet */
-    .iowa-grid {
+    .primary-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Iowa (Audio): 2 col */
+    .section-3--A {
         grid-template-columns: 1fr 1fr;
     }
 
-    /* Texas: 2 col */
+    /* Texas (Editor's picks): 2 col */
     .texas-grid {
         grid-template-columns: 1fr 1fr;
     }
 }
 
-/* Mobile: 480px */
-@media (max-width: 480px) {
+
+@media screen and (max-width: 600px) {
+
+    /* Header: กระชับ */
+    .header-wrap {
+        padding: 0 12px;
+    }
 
     .btn-register {
         padding: 5px 10px;
         font-size: 13px;
     }
 
-    .bbc-logo span {
-        width: 30px;
-        height: 30px;
+    /* ซ่อน Sign In เพื่อประหยัดพื้นที่ */
+    .btn-signin {
+        display: none;
+    }
+
+    /* Nav: scroll แนวนอน + ซ่อน scrollbar */
+    .primary-nav {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .primary-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-list {
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    /* Ad: เต็มความกว้าง */
+    .ad-wrapper {
+        width: 100%;
+    }
+
+    /* Grid หลัก: 1 คอลัมน์ */
+    .first-segment-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        padding: 0 0 16px 0;
+        margin: 0;
+    }
+
+    /* จัดลำดับใหม่: Hero ขึ้นก่อน เหมือนเว็บจริง */
+    .first-segment-left {
+        order: 2;
+    }
+
+    .main-segment-center {
+        order: 1;
+    }
+
+    .second-segment--left {
+        order: 3;
+    }
+
+    /* Reset margin ของทุก grid child */
+    .first-segment-left,
+    .main-segment-center,
+    .second-segment--left {
+        margin: 0;
+        padding: 16px;
+    }
+
+    /* ซ้าย: เอาเส้นขวาออก ใส่เส้นล่างแทน */
+    .first-segment-left {
+        border-right: none;
+        border-top: 1px solid #e6e8ea;
+        border-bottom: 1px solid #e6e8ea;
+        padding-bottom: 16px;
+        gap: 20px;
+    }
+
+    /* กลาง (Hero): เส้นล่าง */
+    .first-segment-center {
+        padding: 16px;
+        border-bottom: none;
+    }
+
+    /* ขวา (text-only): กลับเป็น flex column ปกติ */
+    .second-segment--left {
+        display: flex;
+        flex-direction: column;
+        grid-column: 1;
+        border-left: none;
+        border-top: 1px solid #e6e8ea;
+        padding: 8px 16px;
+    }
+
+    /* ภาพในการ์ด: ความสูง auto บนมือถือ */
+    .card-media img {
+        height: auto;
+    }
+
+    /* Hero headline: ขนาดพอดีมือถือ */
+    .card-headline--featured {
         font-size: 20px;
     }
 
-    /* Indiana: 1 col */
-    .indiana-grid {
+    /* Indiana (Weekend reads): 1 col */
+    .section-2--A {
         grid-template-columns: 1fr;
     }
 
-    /* Iowa: 1 col */
-    .iowa-grid {
-        grid-template-columns: 1fr;
+    /* Iowa (Audio): ยังคง 2 col พอดีจอ */
+    .section-3--A {
+        grid-template-columns: 1fr 1fr;
     }
 
-    /* Texas: 1 col */
+    /* Texas (Editor's picks): 1 col */
     .texas-grid {
         grid-template-columns: 1fr;
     }
 
-    /* London card: stack vertically */
+    /* More news card: รูปเล็ก + ข้อความ */
     .card--london {
-        grid-template-columns: 80px 1fr;
+        grid-template-columns: 90px 1fr;
+    }
+
+    /* Section ต่างๆ: padding พอดีขอบจอ */
+    .new-section--1,
+    .new-section--2,
+    .new-section--3,
+    .new-section--last,
+    .new-section--final {
+        padding: 16px 16px 8px;
+    }
+
+    /* Footer: ปรับ gap */
+    .footer-links {
+        gap: 8px 12px;
     }
 }
